@@ -15,6 +15,8 @@ public class Board implements ActionListener
     ImageIcon lilyPad = new ImageIcon("LilyPad.png");
     ImageIcon greenFrog = new ImageIcon("GreenFrog.png");
     ImageIcon redFrog = new ImageIcon("RedFrog.png");
+    boolean pressed = false;
+    
 
     public Board()
     {      
@@ -30,7 +32,7 @@ public class Board implements ActionListener
         {
             for (int y = 0; y < 5; y++)
             {              
-                square[x][y] = new Square(1, 1, "water.png");
+                square[x][y] = new Square(x, y, water);
                 panel.add(square[x][y].getButton());
                 square[x][y].getButton().addActionListener(this);
             }
@@ -62,20 +64,42 @@ public class Board implements ActionListener
      
       public void actionPerformed(ActionEvent e)
       { 
+          JButton source = (JButton)e.getSource();
+
           for(int x = 0; x < 5; x++) 
           { 
               for(int y = 0; y < 5; y++) 
               { 
-                  if(e.getSource() == square[x][y].getButton()){
-                  Icon icon = square[x][y].button.getIcon();
-                  square[x][y].moveTo(square1.moveTo(square2));
-                  }  
+                
+                if(source.equals(square[x][y].button))
+                {
+                    if(pressed == false && (square[x][y].getImage() = greenFrog || square[x][y].getImage() = redFrog));
+                }
+                 
               }
           }
+        }
+    }
 
-      }
 
-}
+
+
+
+
+        //   for(int x = 0; x < 5; x++) 
+        //   { 
+        //       for(int y = 0; y < 5; y++) 
+        //       { 
+        //           if(e.getSource() == square[x][y].getButton()){
+        //           Icon icon = square[x][y].button.getIcon();
+        //           square[x][y].moveTo(square1.moveTo(square2));
+        //           }  
+        //       }
+        //   }
+
+    
+
+
 
     
 
