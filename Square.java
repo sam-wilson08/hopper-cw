@@ -10,6 +10,7 @@ public class Square
     int yPosition;
     String imageName;
     JButton button = new JButton();
+    
 
     public Square(int x, int y, ImageIcon image)
     {
