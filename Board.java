@@ -80,42 +80,46 @@ public class Board implements ActionListener
           { 
               for(int y = 0; y < 5; y++)
               { 
-                possibleX = x - x1;
-                possibleY = y - y1;
+                // possibleX = x - x1;
+                // possibleY = y - y1;
                 
 
                 if(source.equals(square[x][y].button))
                 {
                     if(clicked == false && (square[x][y].getImage() == greenFrog || square[x][y].getImage() == redFrog))
                     {
-                        icon = square[x][y].getImage();
-                        
                         x1 = square[x][y].getXPosition();
                         y1 = square[x][y].getYPosition();
-                    
-                        if(square[x][y].getImage() == greenFrog)
+
+                        icon = square[x1][y1].getImage();
+                  
+                        if(square[x1][y1].getImage() == greenFrog)
                         {
-                            square[x][y].setImage(greenFrogBorder);
+                            square[x1][y1].setImage(greenFrogBorder);
                         }
-                        else if (square[x][y].getImage().equals(redFrog))
+                        else if (square[x1][y1].getImage().equals(redFrog))
                         {
-                            square[x][y].setImage(redFrogBorder);
+                            square[x1][y1].setImage(redFrogBorder);
                         }
 
+                        
                         clicked = true;
               }
               else if(clicked == true)
               {
+                square[x1][y1].setImage(lilyPad);
+
                 square[x][y].setImage(icon);
-                square[x][y].setImage(lilyPad);
+                
+                // square[x][y].setImage(lilyPad);
                 clicked = false;
 
               }
 
-              else if (clicked == false)
-              {
-                square[x][y].setImage(lilyPad);
-              }
+            //   else if (clicked == false)
+            //   {
+            //     square[x][y].setImage(lilyPad);
+            //   }
               
 
              }
