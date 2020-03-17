@@ -10,7 +10,9 @@ public class Square
     int yPosition;
     String imageName;
     JButton button = new JButton();
-    
+
+    ImageIcon greenFrogBorder = new ImageIcon("GreenFrog2.png");
+    ImageIcon redFrogBorder = new ImageIcon("RedFrog2.png");
 
     public Square(int x, int y, ImageIcon image)
     {
@@ -53,31 +55,27 @@ public class Square
         return this.image;
     }
 
-    // public void setImage(ImageIcon image)
-
     public void setImage(ImageIcon image)
     {
         this.image = image;
         button.setIcon(image);
     }
 
-    // public void moveTo(JButton square2)
-    // {
-    //     System.out.println("kds");
-    //     // icon = square1.getIcon();
-    //     // square2.setIcon(icon);
-    //     // square11.setIcon(lilyPad);
-    
-    //     // square[x][y].button.getIcon();
+    public Square moveTo(Square destinationSquare)
+    {
+        if (this.getImage().toString() == "GreenFrog2.png") {
+            destinationSquare.setImage(new ImageIcon("GreenFrog.png"));
+        } else if (this.getImage().toString() == "RedFrog2.png") {
+            System.out.println("woo in red");
+            destinationSquare.setImage(new ImageIcon("RedFrog.png"));
+        } else {
+            destinationSquare.setImage(new ImageIcon("LilyPad.png"));
+        }
         
-    //     // button.getIcon();
-    //     // get the icon of the current square
-    //     // this.getIcon();
-    //     // set the current square's icon to be a lily pad
+        this.setImage(new ImageIcon("lilypad.png"));
 
-
-    //     //set the new square's icon to be the icon of the old square (frog)
-    // }
+        return destinationSquare;
+    }
 
 }
 
