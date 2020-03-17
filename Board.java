@@ -19,8 +19,8 @@ public class Board implements ActionListener
     ImageIcon redFrogBorder = new ImageIcon("RedFrog2.png");
     boolean clicked = false;
     ImageIcon icon = new ImageIcon();
-    int x1 = -1;
-    int y1 = -1;
+    int x1;
+    int y1;
     int possibleX;
     int possibleY;
     
@@ -80,8 +80,6 @@ public class Board implements ActionListener
           { 
               for(int y = 0; y < 5; y++)
               { 
-                // possibleX = x - x1;
-                // possibleY = y - y1;
                 
 
                 if(source.equals(square[x][y].button))
