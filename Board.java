@@ -88,8 +88,8 @@ public class Board implements ActionListener
 
                         square[x1][y1].moveTo(square[x][y]);
                 
-                        System.out.println("This is the first square icon (lilypad) " + square[x1][y1].getImage());
-                        System.out.println("This is the second square icon (frog) " + square[x][y].getImage());
+                        // System.out.println("This is the first square icon (lilypad) " + square[x1][y1].getImage());
+                        // System.out.println("This is the second square icon (frog) " + square[x][y].getImage());
                         clicked = false;
                     }
                 }

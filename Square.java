@@ -66,12 +66,10 @@ public class Square
         if (this.getImage().toString() == "GreenFrog2.png") {
             destinationSquare.setImage(new ImageIcon("GreenFrog.png"));
         } else if (this.getImage().toString() == "RedFrog2.png") {
-            System.out.println("woo in red");
             destinationSquare.setImage(new ImageIcon("RedFrog.png"));
         } else {
             destinationSquare.setImage(new ImageIcon("LilyPad.png"));
         }
-        
         this.setImage(new ImageIcon("lilypad.png"));
 
         return destinationSquare;
