@@ -14,6 +14,7 @@ public class Square
     ImageIcon greenFrogBorder = new ImageIcon("GreenFrog2.png");
     ImageIcon redFrogBorder = new ImageIcon("RedFrog2.png");
 
+    //constructor that allows an instance of a square to take an x, y and image
     public Square(int x, int y, ImageIcon image)
     {
         this.image = image;
@@ -63,13 +64,15 @@ public class Square
 
     public Square moveTo(Square destinationSquare)
     {
+        //compare image to string of first click image 
         if (this.getImage().toString() == "GreenFrog2.png") {
+            //if image was green frog with border, set destination square image to green frog
             destinationSquare.setImage(new ImageIcon("GreenFrog.png"));
         } else if (this.getImage().toString() == "RedFrog2.png") {
+            //if image was red frog with border, set destination square image to red frog
             destinationSquare.setImage(new ImageIcon("RedFrog.png"));
-        } else {
-            destinationSquare.setImage(new ImageIcon("LilyPad.png"));
-        }
+        } 
+        //set first icon image to a lilypad
         this.setImage(new ImageIcon("lilypad.png"));
 
         return destinationSquare;
